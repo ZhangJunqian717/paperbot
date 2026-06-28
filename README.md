@@ -38,23 +38,23 @@
 
 ### 1. Fork 这个仓库
 
-### 2. 准备 Gmail 应用密码
+### 2. 获取 QQ 邮箱授权码
 
-- 打开 [Google Account → Security → App passwords](https://myaccount.google.com/apppasswords)
-- 选择 "Mail" + "Other"，输入 "PaperBot"
-- 复制生成的 16 位密码
+- 登录 QQ 邮箱 → 设置 → 账户
+- 找到 **POP3/IMAP/SMTP 服务**，开启 **SMTP 服务**
+- 按提示发送短信验证，会生成一个 **16 位授权码**，复制保存
 
 ### 3. 设置 GitHub Secrets
 
-进入 Settings → Secrets and variables → Actions → New repository secret，添加：
+打开仓库 → Settings → Secrets and variables → Actions → New repository secret，添加 5 个：
 
 | Secret | 值 |
 |--------|-----|
-| `SMTP_SERVER` | `smtp.gmail.com` |
+| `SMTP_SERVER` | `smtp.qq.com` |
 | `SMTP_PORT` | `587` |
-| `SMTP_EMAIL` | `你的邮箱@gmail.com` |
-| `SMTP_PASSWORD` | 刚才复制的应用密码 |
-| `RECIPIENT_EMAIL` | `接收推送的邮箱` |
+| `SMTP_EMAIL` | `你的QQ号@qq.com` |
+| `SMTP_PASSWORD` | 刚才的 QQ 邮箱授权码 |
+| `RECIPIENT_EMAIL` | `接收推送的邮箱`（可以和上面一样） |
 
 ### 4. 手动测试
 
